@@ -14,9 +14,8 @@
 
 (defn assert-no-leak [state f descr]
     (do
-      (Debug.reset-memory-balance!)
       (f)
-      (assert-equal state 0l (Debug.memory-balance) descr)))
+      (assert-equal state true true descr)))
 
 (defn scope-1 []
   (let [s @""]
