@@ -1,0 +1,12 @@
+;; This module doesn't work right now - can't call functions with arguments of type 'void' (in C).
+
+(defmodule Nil
+  ;; Stringification of ()
+  (defn str [x]
+    (let [_ (the () x)]
+      @"()"))
+  (defn = [a b]
+    (let [_ (the () a)
+          _ (the () b)]
+      true))
+  )
